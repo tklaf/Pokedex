@@ -1,7 +1,7 @@
 h1{
     text-align: center;
 }
-.poke_div {
+/* .poke_div {
     background-color: blue;
     color: black;
     float: left;
@@ -9,4 +9,19 @@ h1{
     height: 100px;
     margin: 10px;
 
+} */
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
 }
+.poke_div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
