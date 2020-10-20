@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+}
+.poke_div {
+    background-color: blue;
+    color: black;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+
+}
