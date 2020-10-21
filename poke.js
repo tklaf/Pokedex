@@ -23,13 +23,15 @@ const allPokeJson = () => {
             pokeDiv.setAttribute('id', 'div1')
             let pokeName = document.createElement('h2')
             let sprite = document.createElement('img')
-            pokeName.innerText = pokeArray[i].name.toUpperCase()
+            let pokeID = i+1
+            console.log(pokeID)
+            pokeName.innerText ="#" + pokeID + "\xa0\xa0\xa0\xa0" + pokeArray[i].name.toUpperCase()
             sprite.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i + 1}.png`
             link.appendChild(pokeName)
             pokeDiv.appendChild(link)
             pokeDiv.appendChild(sprite)
             allPokeDiv.appendChild(pokeDiv)
-            link.addEventListener('click', (e) => {
+            pokeDiv.addEventListener('click', (e) => {
                 e.preventDefault()
                 console.log(id)
                 id = i+1
