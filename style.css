@@ -11,17 +11,50 @@ h1{
 
 } */
 .container {
-    display: grid;
+    /* display: grid;
     grid-template-columns: auto auto auto;
     background-color: #2196F3;
-    padding: 10px;
+    padding: 10px; */
 }
-.poke_div {
+#pokeDiv {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
     font-size: 30px;
     text-align: center;
+    font-family: 'Oswald', sans-serif;
+    border: solid black;
+      border-width: .5px .5px;
+  }
+  #div1 {
+      /* margin: 10px; */
+      border: solid black;
+      border-width: 1px 1px;
+  }
+  #singlePokeDiv{
+      text-align: center;
+      margin: 10px;
+      font-family: 'Oswald', sans-serif;
+      
+  }
+  h3 {
+      font-size: 60px ;
+  }
+  h1 {
+      font-size: 70px;
+  }
+  img{
+    max-height: 300px;
+    max-width: 300px;
+    width: 300px;
+    height: 300px;
+  }
+  h5{
+      font-size: 50px;
+      margin: auto;
+      font-family: 'Oswald', sans-serif;
+
+  }
+  h4{
+      font-size: 40px;
+      margin: auto;
   }

@@ -1,9 +1,9 @@
+let id = 0
 const POKE_URL = `https://pokeapi.co/api/v2/pokemon/?limit=893`
 let singlePokeURL =  `https://pokeapi.co/api/v2/pokemon/`
-// console.log(singlePokeURL)
-pokeAmount = 893
-let allPokeDiv = document.querySelector('.poke_div')
-
+let allPokeDiv = document.getElementById('pokeDiv')
+let firstPage = document.querySelector('.index')
+let selectSingleDiv = document.querySelector('#singlePokeDiv')
 //========================================================================================================================================
 
 
@@ -20,22 +20,31 @@ const allPokeJson = () => {
             let link = document.createElement('a')
             link.href = './pokemon.html'
             let pokeDiv= document.createElement("div")
+            pokeDiv.setAttribute('id', 'div1')
             let pokeName = document.createElement('h2')
             let sprite = document.createElement('img')
-            pokeName.innerText = pokeArray[i].name
+            pokeName.innerText = pokeArray[i].name.toUpperCase()
             sprite.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i + 1}.png`
             link.appendChild(pokeName)
             pokeDiv.appendChild(link)
             pokeDiv.appendChild(sprite)
             allPokeDiv.appendChild(pokeDiv)
-            link.addEventListener('click', () => onePokeJson(singlePokeURL + `${pokeArray[i].name}`))
+            link.addEventListener('click', (e) => {
+                e.preventDefault()
+                console.log(id)
+                id = i+1
+                
+                //we need to remove the pokediv above so that we can display new data
+                this.pokeDiv.remove()
+                onePokeJson(id)
+                //now that the data is removed on a div click, we need to display the pokemon that we clicked's info
+                selectSingleDiv.appendChild(onePokeJson())
+                })
+            }
+        })
+        .catch(error => console.log("ERROR: ", error))
+    }
 
-           
-            
-        }
-    })
-    .catch(error => console.log("ERROR: ", error))
-}
 
 
 
@@ -45,29 +54,40 @@ const allPokeJson = () => {
 
 //BELOW IS FOR A SINGLE POKEMON SEARCH, WHICH GIVES ME TONS OF INFO FROM THAT ONE POKEMON
 
-const onePokeJson = (url) => {
-    axios.get(url)
+const onePokeJson = (id) => {
+    console.log(id)
+    axios.get(singlePokeURL + id)
     .then(response => {
-        console.log(response.data)
+        // console.log(response)
+        let singlePokemonDiv= document.createElement("div")
+        let singlePokeData = response.data
+        console.log(singlePokeData)   
+        let pokeName = document.createElement('h3')
+        pokeName.innerText = response.data.name.toUpperCase()
+        // console.log(pokeName)
+        
+        selectSingleDiv.appendChild(singlePokemonDiv)
+        let pokeID = document.createElement('h5')
+        let weight = document.createElement('h4')
+        let height = document.createElement('h4')
+        let sprite = document.createElement('img')
+        let shiny = document.createElement('img')
+        pokeID.innerText="#" + response.data.id
+        sprite.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${response.data.id}.png`
+        shiny.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${response.data.id}.png`
+        weight.innerText = 'Weight: ' + Math.round(response.data.weight /  4.5359237) + " lbs"
+        height.innerText = 'Height: ' + Math.round(response.data.height / 0.254) + ' inches'
+        singlePokemonDiv.appendChild(pokeName)
+        singlePokemonDiv.appendChild(sprite)
+        singlePokemonDiv.appendChild(shiny)
+        singlePokemonDiv.appendChild(pokeID)
+        singlePokemonDiv.appendChild(weight)
+        singlePokemonDiv.appendChild(height)
+        
     })
+
    .catch(error => console.log("ERROR: ", error))
 }
-
-
-
- //========================================================================================================================================   
-
-
-
-// THIS IS A FOR LOOP THAT CREATES THE 893 DIVS FOR EACH OF THE POKEMON
-
-// for (let i = 0; i <= pokeAmount; i++) {
-//     let pokeDiv = document.createElement('div')
-//     pokeDiv.classList.add('.poke_div')
-//     })
-//     document.body.appendChild(pokeDiv)
-// }
-
 
 //========================================================================================================================================
 
