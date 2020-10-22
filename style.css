@@ -62,3 +62,15 @@ h1{
   a{
       text-decoration: none;
   }
+  h2 {
+      text-align: center;
+  }
+  #button{
+    background-color: lightgray;
+    border: solid black;
+    border-width: 1px 1px;
+    margin: auto;
+    font-size: x-large;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }

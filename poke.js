@@ -24,7 +24,7 @@ const allPokeJson = () => {
             let pokeName = document.createElement('h2')
             let sprite = document.createElement('img')
             let pokeID = i+1
-            console.log(pokeID)
+            // console.log(pokeID)
             pokeName.innerText ="#" + pokeID + "\xa0\xa0\xa0\xa0" + pokeArray[i].name.toUpperCase()
             sprite.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i + 1}.png`
             link.appendChild(pokeName)
@@ -62,13 +62,16 @@ const onePokeJson = (id) => {
     .then(response => {
         // console.log(response)
         let singlePokemonDiv= document.createElement("div")
-        let singlePokeData = response.data
-        console.log(singlePokeData)   
+        // let singlePokeData = response.data
+        // console.log(singlePokeData)   
         let pokeName = document.createElement('h3')
         pokeName.innerText = response.data.name.toUpperCase()
         // console.log(pokeName)
         
         selectSingleDiv.appendChild(singlePokemonDiv)
+        let backButton = document.createElement('button1')
+        backButton.setAttribute('id', 'button')
+        let buttonText = document.createTextNode('BACK')
         let pokeID = document.createElement('h5')
         let weight = document.createElement('h4')
         let height = document.createElement('h4')
@@ -77,14 +80,23 @@ const onePokeJson = (id) => {
         pokeID.innerText="#" + response.data.id
         sprite.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${response.data.id}.png`
         shiny.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${response.data.id}.png`
+        backPic.src = ""
         weight.innerText = 'Weight: ' + Math.round(response.data.weight /  4.5359237) + " lbs"
         height.innerText = 'Height: ' + Math.round(response.data.height / 0.254) + ' inches'
+        singlePokemonDiv.appendChild(backButton)
         singlePokemonDiv.appendChild(pokeName)
         singlePokemonDiv.appendChild(sprite)
         singlePokemonDiv.appendChild(shiny)
         singlePokemonDiv.appendChild(pokeID)
         singlePokemonDiv.appendChild(weight)
         singlePokemonDiv.appendChild(height)
+        backButton.appendChild(buttonText)
+
+         backButton.addEventListener('click', () => {
+            window.location.reload()
+            })
+
+     
         
     })
 
@@ -93,16 +105,9 @@ const onePokeJson = (id) => {
 
 //========================================================================================================================================
 
-//I NEED TO FIGURE OUT HOW TO UNSTACK THE DIVS IN CSS
-//I NEED TO FIGURE OUT HOW TO PULL THE NAME AND OTHER INFO OUT OF THE API
-
-
-
-
-//pull all of their IDs from the same api
-//take their names and id numbers and push them all to a list of divs through looping
-//pull their sprites from the API as well and put their sprites in the div. 
-//organize the divs through flexbox. (wrapping?)
-//add an event listener to each div, to where when I click on a div, the background will disappear.
-//
+//make a search feature
+//put more info in the singlePokeDiv
+//learn how to pull from arrays
+//clean up code
+//style, style, style
 document.addEventListener('DOMContentLoaded', allPokeJson)
