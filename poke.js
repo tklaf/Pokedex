@@ -80,7 +80,7 @@ const onePokeJson = (id) => {
         pokeID.innerText="#" + response.data.id
         sprite.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${response.data.id}.png`
         shiny.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${response.data.id}.png`
-        backPic.src = ""
+        // backPic.src = 
         weight.innerText = 'Weight: ' + Math.round(response.data.weight /  4.5359237) + " lbs"
         height.innerText = 'Height: ' + Math.round(response.data.height / 0.254) + ' inches'
         singlePokemonDiv.appendChild(backButton)
