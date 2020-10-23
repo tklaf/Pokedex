@@ -34,6 +34,7 @@ const allPokeJson = (pokeUrl) => {
             allPokeDiv.style.display="none"
             search.style.display="none"
             searchButton.style.display="none"
+            
             onePokeJson(SINGLE_POKE_URL + searchName)
 
         })
@@ -45,7 +46,7 @@ const allPokeJson = (pokeUrl) => {
             // console.log(justName)
             let aboutLink = document.getElementById('link')
             let link = document.createElement('a')
-            link.href = './pokemon.html'
+            link.href = './about.html'
             let pokeDiv= document.createElement("div")
             pokeDiv.setAttribute('id', 'div1')
             let pokeName = document.createElement('h2')
@@ -178,10 +179,10 @@ const onePokeJson = (pokeUrl) => {
         singlePokemonDiv.appendChild(height)
         singlePokemonDiv.appendChild(abilityTitle)
         singlePokemonDiv.appendChild(abilityDiv)
-        singlePokemonDiv.appendChild(moveTitle)
-        singlePokemonDiv.appendChild(moveDiv)
         singlePokemonDiv.appendChild(statsTitle)
         singlePokemonDiv.appendChild(statDiv)
+        singlePokemonDiv.appendChild(moveTitle)
+        singlePokemonDiv.appendChild(moveDiv)
         backButton.appendChild(buttonText)
 
          backButton.addEventListener('click', () => {

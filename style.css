@@ -137,6 +137,7 @@ body {
   }
   #abilityTitle{
       font-size: xxx-large;
+      background-color: rgb(230, 46, 42);
   }
   .infoDiv{
       color: white;
@@ -149,5 +150,14 @@ body {
       color: white;
   }
   #moveTitle{
-      font-size: xx-large;
+      font-size: xxx-large;
+      background-color: rgb(230, 46, 42);
+  }
+  .statsDiv{
+    color: white;
+    font-size: 40px;
+  }
+  #statsTitle{
+      font-size: xxx-large;
+      background-color: rgb(230, 46, 42);
   }
