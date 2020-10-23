@@ -7,13 +7,35 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
 </head>
-<h1 id = "title">
-    <img src = "https://cdn.bulbagarden.net/upload/4/4b/Pok%C3%A9dex_logo.png" id = "image">
-</h1>
+<body>
+    <!-- <div id="dot1"></div>
+        <div class='tinyCircle'></div>
+    <div id="dot2"></div>
+        <div class='tinyCircle'></div>
+    <div id="dot3"></div>
+        <div class='tinyCircle'></div>
+    <div id="dot4"></div>
+        <div class='tinyCircle'></div> -->
 
-        <div id='pokeDiv'></div>
-        <div id='singlePokeDiv'></div>
+    <h1 id = "title">
+        <img src = "https://cdn.bulbagarden.net/upload/4/4b/Pok%C3%A9dex_logo.png" id = "image">
+    </h1>
+    <a href="./about.html" id = "link">About Pokédex</a>
+
+    <div id="searchDiv">
+        <form id="form">
+            <input
+                type="text"
+                name="searchBar"
+                id="search"
+                placeholder="search for a Pokemon..."
+            />
+            <button id="submitButton" type="submit">Submit</button>
+        </form>
     </div>
+    <ul id="pokemonList"></ul>
+    <div id='pokeDiv'></div>
+    <div id='singlePokeDiv'></div>
 
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

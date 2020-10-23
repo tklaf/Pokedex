@@ -1,3 +1,6 @@
+body {
+    background-color: rgb(200, 46, 42);
+}
 #title{
     text-align: center;
 }
@@ -5,35 +8,23 @@
     height: auto;
     
 }
-/* .poke_div {
-    background-color: blue;
-    color: black;
-    float: left;
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-
-} */
-.container {
-    /* display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #2196F3;
-    padding: 10px; */
-}
 #pokeDiv {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     font-size: 30px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    border: solid black;
-      border-width: .5px .5px;
+    border: solid white;
+    border-width: .5px .5px;
+    background-color: 200, 46, 42;
+    : white
   }
   #div1 {
       /* margin: 10px; */
-      border: solid black;
+      border: solid white;
       border-width: 1px 1px;
       cursor: pointer;
+      color:white;
   }
   #singlePokeDiv{
       text-align: center;
@@ -43,6 +34,8 @@
   }
   h3 {
       font-size: 60px ;
+      margin:10px;
+      color: white;
   }
   h1 {
       font-size: 70px;
@@ -53,28 +46,105 @@
     width: 300px;
     height: 300px;
   }
-  h5{
+  #pokeID{
       font-size: 50px;
       margin: auto;
       font-family: 'Oswald', sans-serif;
+      color: white;
 
   }
-  h4{
+  #weight{
       font-size: 40px;
       margin: auto;
+      
   }
-  a{
-      text-decoration: none;
-  }
+  #height{
+    font-size: 40px;
+    margin: auto;
+    
+}
+   a{
+     text-decoration: none;
+     color: black;
+   }
   h2 {
       text-align: center;
   }
   #button{
-    background-color: lightgray;
+    background-color: white;
     border: solid black;
     border-width: 1px 1px;
     margin: auto;
     font-size: x-large;
     cursor: pointer;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+#searchDiv{
+    text-align: center;
+
+}
+#link{
+    text-align: center;
+    font-size: x-large;
+    text-decoration-line: underline;
+    text-decoration-color: white;
+    color: white;
+}
+#ability{
+    font-size: 40px;
+    margin: auto;
+    
+}
+#dot1 {
+    height: 200px;
+    width: 200px;
+    background-color: lightblue;
+    border-radius: 50%;
+    display: inline-block;
+    border: solid black
+}
+#dot2 {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    border: solid black
+}
+#dot3 {
+    height: 50px;
+    width: 50px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+    border: solid black
+}
+  
+#dot4 {
+    height: 50px;
+    width: 50px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    border: solid black
+  }
+  #pokeName{
+      color: white;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  .infoDiv{
+      display: flex;
+      
+      margin: 0;
+      padding: 0;
+      width: 20%;
+      color: white;
+  }
+  #abilityTitle{
+      font-size: xxx-large;
+  }
+  .abilityDiv{
+      display:flex;
+      /* flex-direction: column; */
+      color: white;
   }
