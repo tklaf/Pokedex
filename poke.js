@@ -164,12 +164,6 @@ const onePokeJson = (pokeUrl) => {
 }
 
 //========================================================================================================================================
-
-//make a search feature
-//put more info in the singlePokeDiv
-//learn how to pull from arrays
-//clean up code
-//style, style, style
 document.addEventListener('DOMContentLoaded', () => {
     allPokeJson(POKE_URL)
 })
