@@ -136,8 +136,36 @@ const onePokeJson = (pokeUrl) => {
             ability.setAttribute('class', "abilityDiv")
             ability.innerText= abilities[i].ability.name
             abilityDiv.appendChild(ability)
-            console.log(abilities[i])  
         }
+        let moveDiv = document.createElement('div')
+        let moves = response.data.moves
+        let moveTitle = document.createElement('p')
+        moveTitle.innerText="MOVES:"
+        moveTitle.setAttribute('id', "moveTitle")
+        moveTitle.setAttribute('class', 'moveDiv')
+        for (let i = 0; i < moves.length; i++) {
+            let move = document.createElement('p')
+            move.setAttribute('id', 'move')
+            move.setAttribute('class', 'moveDiv')
+            move.innerText = moves[i].move.name
+            moveDiv.appendChild(move)
+        }
+
+        let statDiv = document.createElement('div')
+        let stats = response.data.stats
+        let statsTitle= document.createElement('p')
+        statsTitle.innerText='BASE STATS:'
+        statsTitle.setAttribute('id', 'statsTitle')
+        statsTitle.setAttribute('class', 'statsDiv')
+        for (let i = 0; i < stats.length; i++) {
+            let stat= document.createElement('p')
+            stat.setAttribute('id', 'stat')
+            stat.setAttribute('class', 'statsDiv')
+            stat.innerText = stats[i].stat.name + ": " + stats[i].base_stat
+            statDiv.appendChild(stat)
+            
+        }
+
         
         
         
@@ -150,6 +178,10 @@ const onePokeJson = (pokeUrl) => {
         singlePokemonDiv.appendChild(height)
         singlePokemonDiv.appendChild(abilityTitle)
         singlePokemonDiv.appendChild(abilityDiv)
+        singlePokemonDiv.appendChild(moveTitle)
+        singlePokemonDiv.appendChild(moveDiv)
+        singlePokemonDiv.appendChild(statsTitle)
+        singlePokemonDiv.appendChild(statDiv)
         backButton.appendChild(buttonText)
 
          backButton.addEventListener('click', () => {
@@ -162,6 +194,7 @@ const onePokeJson = (pokeUrl) => {
 
    .catch(error => console.log("ERROR: ", error))
 }
+
 
 //========================================================================================================================================
 document.addEventListener('DOMContentLoaded', () => {
